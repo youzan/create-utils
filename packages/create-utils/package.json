@@ -44,5 +44,6 @@
     "@types/fs-extra": "^5.0.4",
     "@types/node": "^10.12.18",
     "typescript": "^3.2.2"
-  }
+  },
+  "gitHead": "3371ea3e377d8016fe5c2cb5f3ea9ffae2c27657"
 }

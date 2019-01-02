@@ -5,6 +5,7 @@ var chalk_1 = tslib_1.__importDefault(require("chalk"));
 var path_1 = tslib_1.__importDefault(require("path"));
 var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 var os_1 = tslib_1.__importDefault(require("os"));
+var cross_spawn_1 = tslib_1.__importDefault(require("cross-spawn"));
 var child_process_1 = require("child_process");
 var validate_npm_package_name_1 = tslib_1.__importDefault(require("validate-npm-package-name"));
 function printValidationResults(results) {
@@ -32,10 +33,10 @@ function default_1(name) {
         name: name,
         version: '0.0.1',
         scripts: {
-            dev: "utils-script dev",
-            build: "utils-script build",
-            test: "utils-script test",
-            publish: "utils-script publish"
+            dev: "utils-scripts dev",
+            build: "utils-scripts build",
+            test: "utils-scripts test",
+            publish: "utils-scripts publish"
         },
     };
     fs_extra_1.default.writeFileSync(path_1.default.join(root, 'package.json'), JSON.stringify(packageJson, null, 2) + os_1.default.EOL);
@@ -45,18 +46,18 @@ function default_1(name) {
     // cd root
     process.chdir(root);
     console.log("Installing " + chalk_1.default.cyan(packageToInstall));
-    // const args = ['add', '--exact'];
-    // args.push(packageToInstall);
-    // args.push('--cwd');
-    // args.push(root);
-    // const child = spawn('yarn', args, { stdio: 'inherit' });
-    // child.on('close', code => {
-    //   if (code !== 0) {
-    //     console.error(chalk.red('Unexpected error. Please report it as a bug'));
-    //     return;
-    //   }
-    //   console.log(chalk.green('dependencies has installed'))
-    // });
+    var args = ['add', '--exact'];
+    args.push(packageToInstall);
+    args.push('--cwd');
+    args.push(root);
+    var child = cross_spawn_1.default('yarn', args, { stdio: 'inherit' });
+    child.on('close', function (code) {
+        if (code !== 0) {
+            console.error(chalk_1.default.red('Unexpected error. Please report it as a bug'));
+            return;
+        }
+        console.log(chalk_1.default.green('dependencies has installed'));
+    });
     // git init
     child_process_1.execSync('git init', { stdio: 'ignore' });
 }
