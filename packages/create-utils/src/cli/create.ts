@@ -40,10 +40,10 @@ export default function(name) {
     name,
     version: '0.0.1',
     scripts: {
-      dev: "utils-script dev",
-      build: "utils-script build",
-      test: "utils-script test",
-      publish: "utils-script publish"
+      dev: "utils-scripts dev",
+      build: "utils-scripts build",
+      test: "utils-scripts test",
+      publish: "utils-scripts publish"
     },
   };
   fs.writeFileSync(
@@ -60,19 +60,19 @@ export default function(name) {
     `Installing ${chalk.cyan(packageToInstall)}`
   );
 
-  // const args = ['add', '--exact'];
-  // args.push(packageToInstall);
-  // args.push('--cwd');
-  // args.push(root);
-  // const child = spawn('yarn', args, { stdio: 'inherit' });
+  const args = ['add', '--exact'];
+  args.push(packageToInstall);
+  args.push('--cwd');
+  args.push(root);
+  const child = spawn('yarn', args, { stdio: 'inherit' });
 
-  // child.on('close', code => {
-  //   if (code !== 0) {
-  //     console.error(chalk.red('Unexpected error. Please report it as a bug'));
-  //     return;
-  //   }
-  //   console.log(chalk.green('dependencies has installed'))
-  // });
+  child.on('close', code => {
+    if (code !== 0) {
+      console.error(chalk.red('Unexpected error. Please report it as a bug'));
+      return;
+    }
+    console.log(chalk.green('dependencies has installed'))
+  });
 
   // git init
   execSync('git init', { stdio: 'ignore' });
