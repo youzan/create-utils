@@ -1,6 +1,6 @@
 {
   "name": "create-utils",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Create js utils function",
   "keywords": [
     "utils"
@@ -15,7 +15,8 @@
   "files": [
     "lib",
     "template",
-    "package.json"
+    "package.json",
+    "README.md"
   ],
   "repository": {
     "type": "git",
