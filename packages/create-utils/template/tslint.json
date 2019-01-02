@@ -1,0 +1,41 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "no-unused-expression": false,
+    "semicolon": [true, "always"],
+    "no-shadowed-variable": false,
+    "only-arrow-functions": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
+    "comment-format": [true, "check-space"],
+    "ter-indent": [
+      true,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "triple-equals": true,
+    "no-eval": true,
+    "eofline": true,
+    "quotemark": [true, "single"]
+  },
+  "linterOptions": {
+    "exclude": [
+      "./dist",
+      "node_module",
+      "docs"
+    ]
+  }
+}

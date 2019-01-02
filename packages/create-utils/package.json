@@ -1,0 +1,46 @@
+{
+  "name": "create-utils",
+  "version": "0.1.0",
+  "description": "Create js utils function",
+  "keywords": [
+    "utils"
+  ],
+  "author": "wulv <wulv@youzan.com>",
+  "homepage": "https://github.com/youzan/create-utils#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "bin": {
+    "create-utils": "./lib/index.js"
+  },
+  "files": [
+    "lib",
+    "template",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youzan/create-utils.git"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/youzan/create-utils/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "fs-extra": "^7.0.1",
+    "tslib": "^1.9.3",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/node": "^10.12.18",
+    "typescript": "^3.2.2"
+  }
+}

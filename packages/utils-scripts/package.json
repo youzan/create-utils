@@ -1,0 +1,69 @@
+{
+  "name": "utils-scripts",
+  "version": "0.1.0",
+  "description": "Configuration and scripts for Create Utils",
+  "keywords": [
+    "utils",
+    "scripts"
+  ],
+  "author": "wulv <wulv@youzan.com>",
+  "homepage": "https://github.com/youzan/create-utils#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "bin": {
+    "utils-scripts": "./lib/index.js"
+  },
+  "files": [
+    "lib",
+    "docs-template",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youzan/create-utils.git"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/youzan/create-utils/issues"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.0",
+    "@types/del": "^3.0.1",
+    "@types/gulp": "^4.0.5",
+    "@types/jest": "^23.3.11",
+    "@types/node": "^10.12.18",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-plugin-transform-es2015-modules-simple-commonjs": "^0.3.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "del": "^3.0.0",
+    "esdoc": "^1.1.0",
+    "esdoc-brand-plugin": "^1.0.1",
+    "esdoc-coverage-plugin": "^1.1.0",
+    "esdoc-importpath-plugin": "^1.0.2",
+    "esdoc-publish-html-plugin": "^1.1.2",
+    "esdoc-standard-plugin": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-gh-pages": "0.6.0-6",
+    "gulp-if": "^2.0.2",
+    "gulp-json-editor": "^2.5.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-typescript": "^5.0.0",
+    "jest": "^23.6.0",
+    "merge2": "^1.2.3",
+    "through2": "^3.0.0",
+    "ts-jest": "^23.10.5",
+    "tslib": "^1.9.3"
+  }
+}

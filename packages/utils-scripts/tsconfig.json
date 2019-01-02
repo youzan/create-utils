@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "module": "commonjs",
+    "target": "es5",
+    "esModuleInterop": true,
+    "checkJs": false,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2017"],
+    "importHelpers": true,
+    "outDir": "./lib"
+  },
+  "include": ["./src"]
+}
