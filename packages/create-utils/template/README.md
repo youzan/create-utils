@@ -1,4 +1,4 @@
-This project was bootstrapped with [utils-cli](https://github.com/wulv/zan-utils-cli).
+This project was bootstrapped with [create-utils](https://github.com/youzan/create-utils).
 
 ## Available Scripts
 

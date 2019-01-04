@@ -1,5 +1,6 @@
 const dtsExport = require('../plugins/dts-export');
 const transformEs2015ModulesSimpleCommonjs = require('babel-plugin-transform-es2015-modules-simple-commonjs');
+
 module.exports = {
   // build config
   tsconfig: {
