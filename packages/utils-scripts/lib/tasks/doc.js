@@ -7,10 +7,10 @@ var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 var path_1 = tslib_1.__importDefault(require("path"));
 var config_1 = tslib_1.__importDefault(require("../config"));
 var configName = 'esdoc.js';
-var exists = fs_extra_1.default.pathExistsSync(path_1.default.resolve(base.distCwd, configName));
+var exists = fs_extra_1.default.pathExistsSync(path_1.default.resolve(config_1.default.base.distCwd, configName));
 var esdocConfig = {};
 if (exists) {
-    esdocConfig = require(path_1.default.resolve(base.distCwd, configName));
+    esdocConfig = require(path_1.default.resolve(config_1.default.base.distCwd, configName));
 }
 gulp_1.default.task('doc', function (done) {
     esdoc_1.default.generate(tslib_1.__assign({}, config_1.default.esdoc, esdocConfig));
