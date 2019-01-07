@@ -29,8 +29,9 @@ gulp.task("build", () => {
       .pipe(gulpIf(config.target.babel, babel(config.target.babel)))
       .pipe(gulp.dest(config.base.dist));
   } else {
-    gulp
+    return gulp
       .src('src/**/**/*',  { base: path.join(config.base.distCwd, "src") })
+      .pipe(gulp.dest(config.base.esTemp))
       .pipe(babel(config.target.babel))
       .pipe(gulp.dest(config.base.dist));
   }

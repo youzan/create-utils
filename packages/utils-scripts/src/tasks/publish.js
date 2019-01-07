@@ -7,7 +7,8 @@ import config from '../config';
 function publishGit() {
   return merge(
     gulp.src('package.json').pipe(jsonEditor((json) => {
-      return Object.assign({}, json, config.target.packageRewrite)
+      const name = { name: `${json.name}${config.target.prefix ? ('-' + config.target.prefix) : ''}`}
+      return Object.assign({}, json, config.target.packageRewrite, ...name);
     })),
     gulp.src([config.base.dist + '/**', ...config.base.static]),
   ).pipe(

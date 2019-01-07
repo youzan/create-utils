@@ -91,4 +91,5 @@ export default function(name: string): void{
   console.log();
   console.log(chalk.cyan('  cd'), name);
   console.log(`  ${chalk.cyan('npm run dev')}`);
+  process.exit(1);
 }

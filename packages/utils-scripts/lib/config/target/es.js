@@ -26,8 +26,8 @@ module.exports = {
     babel: false,
     // publish config
     branch: 'publish/es',
+    prefix: '-es',
     packageRewrite: {
-        prefix: '-es',
         main: './index.js',
         typings: './index.d.ts',
         scripts: {},

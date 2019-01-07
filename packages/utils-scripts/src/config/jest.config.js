@@ -1,5 +1,5 @@
 module.exports = {
-  // preset: 'ts-jest',
+  preset: 'ts-jest',
   testEnvironment: 'node',
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
@@ -14,11 +14,16 @@ module.exports = {
   //   '^.+\\.tsx?$': 'ts-jest',
   // },
 
-  // globals: {
-  //   'ts-jest': {
-  //     diagnostics: false
-  //   }
-  // },
+  globals: {
+    'ts-jest': {
+      // isolatedModules: false,
+      // diagnostics: false,
+      tsConfig: {
+        // importHelpers: true,
+        allowJs: true
+      }
+    }
+  },
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
@@ -27,4 +32,5 @@ module.exports = {
 
   coverageReporters: ['lcov', 'json'],
   testPathIgnorePatterns: ['/node_modules/'],
+  transformIgnorePatterns: ['/node_modules/']
 };

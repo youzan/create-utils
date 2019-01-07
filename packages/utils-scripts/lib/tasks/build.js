@@ -24,8 +24,9 @@ gulp_1.default.task("build", function () {
             .pipe(gulp_1.default.dest(config_1.default.base.dist));
     }
     else {
-        gulp_1.default
+        return gulp_1.default
             .src('src/**/**/*', { base: path_1.default.join(config_1.default.base.distCwd, "src") })
+            .pipe(gulp_1.default.dest(config_1.default.base.esTemp))
             .pipe(gulp_babel_1.default(config_1.default.target.babel))
             .pipe(gulp_1.default.dest(config_1.default.base.dist));
     }
