@@ -3,5 +3,5 @@ import './build';
 import './typing';
 import './doc';
 import './default';
-import './publish';
+import './publish-doc';
 import './dev';

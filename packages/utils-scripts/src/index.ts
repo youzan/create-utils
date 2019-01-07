@@ -2,7 +2,7 @@
 
 import commander from 'commander';
 import dev from './cli/dev';
-import publish from './cli/publish';
+import doc from './cli/doc';
 import test from './cli/test';
 import build from './cli/build';
 
@@ -19,13 +19,13 @@ commander
 
 commander
   .command('build')
-  .description('build file to dist')
+  .description('build file to dist and copy to publish branch')
   .action(build);
 
 commander
-  .command('publish')
-  .description('publish the project')
-  .action(publish);
+  .command('doc')
+  .description('genarate docs and and copy to gh-path branch')
+  .action(doc);
 
 commander
   .command('test')

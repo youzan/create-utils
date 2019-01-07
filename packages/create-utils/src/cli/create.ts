@@ -43,7 +43,7 @@ export default function(name: string): void{
       dev: "utils-scripts dev",
       build: "utils-scripts build",
       test: "utils-scripts test",
-      publish: "utils-scripts publish"
+      doc: "utils-scripts doc"
     },
   };
   fs.writeFileSync(

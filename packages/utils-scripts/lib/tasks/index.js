@@ -5,5 +5,5 @@ require("./build");
 require("./typing");
 require("./doc");
 require("./default");
-require("./publish");
+require("./publish-doc");
 require("./dev");

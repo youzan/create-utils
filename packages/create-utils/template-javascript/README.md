@@ -17,9 +17,14 @@ Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the project for production to the `dist` folder.
 
-### `npm run publish`
+- ESModules: `target=es npm run build`
+- CommonJs: `target=cjs npm run build`
 
+Copy dist directory to the publish/es or publish/cjs branch, you need publish package to npm by yourself.
+
+### `npm run doc`
+
+Automatically generate documents by ESDoc, and Copy docs directory to the gh-pages barnch.
 

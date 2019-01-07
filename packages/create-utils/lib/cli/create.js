@@ -36,7 +36,7 @@ function default_1(name) {
             dev: "utils-scripts dev",
             build: "utils-scripts build",
             test: "utils-scripts test",
-            publish: "utils-scripts publish"
+            doc: "utils-scripts doc"
         },
     };
     fs_extra_1.default.writeFileSync(path_1.default.join(root, 'package.json'), JSON.stringify(packageJson, null, 2) + os_1.default.EOL);

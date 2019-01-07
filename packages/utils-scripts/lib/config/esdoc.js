@@ -12,11 +12,6 @@ module.exports = {
                 kind: ['class', 'method', 'member', 'get', 'set', 'constructor', 'function', 'variable'],
             },
         },
-        // {
-        //   name: 'esdoc-brand-plugin',
-        //   option: {
-        //   },
-        // },
         {
             name: 'esdoc-importpath-plugin',
             option: {
@@ -38,8 +33,6 @@ module.exports = {
                 brand: {
                     title: '有赞工具函数库',
                     description: '有赞工具函数库',
-                    repository: 'https://github.com/wulv/zan-utils.git',
-                    site: 'wulv.github.io/zan-utils',
                     author: 'wulv@youzan.com',
                 }
             }

@@ -4,10 +4,29 @@ import babel from "gulp-babel";
 import gulpIf from "gulp-if";
 import newer from "gulp-newer";
 import path from "path";
+import ghPages from 'gulp-gh-pages';
+import merge from 'merge2';
+import jsonEditor from 'gulp-json-editor';
 
 import config from "../config";
 
-gulp.task("build", () => {
+function publishGit() {
+  return merge(
+    gulp.src('package.json').pipe(jsonEditor((json) => {
+      const name = { name: `${json.name}${config.target.prefix ? ('-' + config.target.prefix) : ''}`}
+      return Object.assign({}, json, config.target.packageRewrite, ...name);
+    })),
+    gulp.src([config.base.dist + '/**', ...config.base.static]),
+  ).pipe(
+    ghPages({
+      branch: config.target.branch,
+      cacheDir: config.base.publishCache,
+      push: true,
+    }),
+  );
+}
+
+function build() {
   if (config.base.useTypeScript) {
     const tsProject = createProject({
       ...config.target.tsconfig,
@@ -35,6 +54,6 @@ gulp.task("build", () => {
       .pipe(babel(config.target.babel))
       .pipe(gulp.dest(config.base.dist));
   }
-  // console.log(config.target.js.tsconfigFile, config.target.js.tsconfig)
- 
-});
+}
+
+gulp.task("build", gulp.series('clean', build, 'typing', publishGit));
