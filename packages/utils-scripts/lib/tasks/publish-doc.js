@@ -11,4 +11,4 @@ function publishDoc() {
         force: true
     }));
 }
-gulp_1.default.task('publish-doc', gulp_1.default.series('clean', 'build', 'doc', publishDoc));
+gulp_1.default.task('publish-doc', gulp_1.default.series('clean', 'dev:build', 'doc', publishDoc));

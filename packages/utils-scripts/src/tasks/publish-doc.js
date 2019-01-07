@@ -10,4 +10,4 @@ function publishDoc() {
   }));
 }
 
-gulp.task('publish-doc', gulp.series('clean', 'build', 'doc', publishDoc));
+gulp.task('publish-doc', gulp.series('clean', 'dev:build', 'doc', publishDoc));
