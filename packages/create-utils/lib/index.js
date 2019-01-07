@@ -11,6 +11,7 @@ var program = commander_1.default
     .version(packageJson.version, '-v, --version')
     .arguments('<project-directory>')
     .usage(chalk_1.default.green('<project-directory>') + " [options]")
+    .option('--js')
     .action(function (name) {
     projectName = name;
 })

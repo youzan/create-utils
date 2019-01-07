@@ -14,9 +14,8 @@
   },
   "files": [
     "lib",
-    "template",
-    "package.json",
-    "README.md"
+    "template-javascript",
+    "template-typescript"
   ],
   "repository": {
     "type": "git",

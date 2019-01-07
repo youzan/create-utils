@@ -15,9 +15,7 @@
   },
   "files": [
     "lib",
-    "docs-template",
-    "package.json",
-    "README.md"
+    "docs-template"
   ],
   "repository": {
     "type": "git",

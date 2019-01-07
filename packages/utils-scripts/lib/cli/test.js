@@ -10,7 +10,7 @@ var jest_config_1 = tslib_1.__importDefault(require("../config/jest.config"));
 var configName = 'jest.config.js';
 function default_1() {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var argv, exists, config;
+        var argv, exists, config, argConfig;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -22,7 +22,11 @@ function default_1() {
                     if (exists) {
                         config = require(path_1.default.resolve(base_1.default.distCwd, configName));
                     }
-                    argv.push('--config', JSON.stringify(tslib_1.__assign({}, jest_config_1.default, config, { rootDir: base_1.default.distCwd }, presets_1.jsWithTs)));
+                    argConfig = tslib_1.__assign({}, jest_config_1.default, config, { rootDir: base_1.default.distCwd });
+                    if (base_1.default.useTypeScript) {
+                        argConfig = tslib_1.__assign({}, argConfig, presets_1.jsWithTs);
+                    }
+                    argv.push('--config', JSON.stringify(argConfig));
                     jest.run(argv);
                     return [2 /*return*/];
             }
