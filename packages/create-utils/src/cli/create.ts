@@ -6,7 +6,7 @@ import spawn from 'cross-spawn';
 import { execSync } from 'child_process';
 import validateProjectName from 'validate-npm-package-name';
 
-function printValidationResults(results: string[]) {
+function printValidationResults(results: string[]): void {
   if (typeof results !== 'undefined') {
     results.forEach(error => {
       console.error(chalk.red(`  *  ${error}`));
@@ -16,7 +16,7 @@ function printValidationResults(results: string[]) {
 
 const packageToInstall = 'utils-scripts';
 
-export default function(name) {
+export default function(name: string): void{
   //check name
   const validationResult = validateProjectName(name);
 
@@ -51,7 +51,10 @@ export default function(name) {
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
   // copy template
-  const templateSrc = path.resolve(__dirname, '../../template');
+  let templateSrc = path.resolve(__dirname, '../../template-typescript');
+  if (this.js) {
+    templateSrc = path.resolve(__dirname, '../../template-javascript');
+  }
   fs.copySync(templateSrc, root);
   // cd root
   process.chdir(root);
@@ -62,18 +65,30 @@ export default function(name) {
 
   const args = ['add', '--exact'];
   args.push(packageToInstall);
+  if (!this.js) {
+    args.push('@types/node', '@types/jest', 'typescript');
+  }
+  args.push('-D');
   args.push('--cwd');
   args.push(root);
-  const child = spawn('yarn', args, { stdio: 'inherit' });
+  const output = spawn.sync('yarn', args, { stdio: 'inherit' });
 
-  child.on('close', code => {
-    if (code !== 0) {
-      console.error(chalk.red('Unexpected error. Please report it as a bug'));
-      return;
-    }
-    console.log(chalk.green('dependencies has installed'))
-  });
+  if (output.error) {
+    console.error(chalk.red('Unexpected error. Please report it as a bug'));
+    return;
+  }
+
+  console.log(chalk.green('Dependencies has installed'));
 
   // git init
   execSync('git init', { stdio: 'ignore' });
+  execSync('git add -A', { stdio: 'ignore' });
+  execSync('git commit -m "Initial commit from Create Utils"', {
+    stdio: 'ignore',
+  });
+
+  console.log('We suggest that you begin by typing:');
+  console.log();
+  console.log(chalk.cyan('  cd'), name);
+  console.log(`  ${chalk.cyan('npm run dev')}`);
 }

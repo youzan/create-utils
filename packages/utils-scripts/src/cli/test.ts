@@ -16,12 +16,13 @@ export default async function() {
   if (exists) {
     config = require(path.resolve(base.distCwd, configName));
   }
-  
+  let argConfig = { ...jestConfig, ...config, rootDir: base.distCwd };
+  if (base.useTypeScript) {
+    argConfig = { ...argConfig, ...tsjPreset };
+  }
   argv.push(
     '--config',
-    JSON.stringify({ ...jestConfig, ...config, rootDir: base.distCwd, 
-      ...tsjPreset
-    })
+    JSON.stringify(argConfig)
   );
   jest.run(argv);
 }

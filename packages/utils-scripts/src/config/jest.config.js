@@ -14,11 +14,11 @@ module.exports = {
   //   '^.+\\.tsx?$': 'ts-jest',
   // },
 
-  globals: {
-    'ts-jest': {
-      diagnostics: false
-    }
-  },
+  // globals: {
+  //   'ts-jest': {
+  //     diagnostics: false
+  //   }
+  // },
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {

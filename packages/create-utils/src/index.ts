@@ -11,6 +11,7 @@ const program = commander
   .version(packageJson.version, '-v, --version')
   .arguments('<project-directory>')
   .usage(`${chalk.green('<project-directory>')} [options]`)
+  .option('--js')
   .action(name => {
     projectName = name;
   })

@@ -1,8 +1,11 @@
 const path = require('path');
 
 const distCwd = process.cwd();
+const appPackage = require(path.join(distCwd, 'package.json'));
+appPackage.devDependencies = appPackage.devDependencies || {};
 
 module.exports = {
+  useTypeScript: appPackage.devDependencies['typescript'] != null,
   distCwd,
   pkg: 'package.json',
   curCwd: path.resolve(__dirname, '../../'),

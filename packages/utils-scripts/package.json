@@ -36,12 +36,11 @@
     "@types/cross-spawn": "^6.0.0",
     "@types/del": "^3.0.1",
     "@types/gulp": "^4.0.5",
-    "@types/jest": "^23.3.11"
+    "@types/jest": "^23.3.11",
+    "@types/node": "^10.12.18"
   },
   "dependencies": {
     "@babel/core": "^7.2.2",
-    "@types/jest": "^23.3.11",
-    "@types/node": "^10.12.18",
     "babel-plugin-transform-es2015-modules-simple-commonjs": "^0.3.0",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
