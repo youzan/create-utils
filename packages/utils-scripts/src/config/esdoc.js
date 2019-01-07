@@ -13,16 +13,6 @@ module.exports = {
       },
     },
     {
-      name: 'esdoc-brand-plugin',
-      option: {
-        title: '有赞工具函数库',
-        description: '有赞工具函数库',
-        repository: 'https://github.com/wulv/zan-utils.git',
-        site: 'wulv.github.io/zan-utils',
-        author: 'wulv@youzan.com',
-      },
-    },
-    {
       name: 'esdoc-importpath-plugin',
       option: {
         replaces: [{ from: '.temp/', to: '' }],
@@ -36,6 +26,16 @@ module.exports = {
     },
     {
       name: 'esdoc-standard-plugin',
+      option: {
+        lint: {
+          enable: false
+        },
+        brand: {
+          title: '有赞工具函数库',
+          description: '有赞工具函数库',
+          author: 'wulv@youzan.com',
+        }
+      }
     },
   ],
 };

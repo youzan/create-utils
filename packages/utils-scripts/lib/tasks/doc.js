@@ -12,7 +12,7 @@ var esdocConfig = {};
 if (exists) {
     esdocConfig = require(path_1.default.resolve(config_1.default.base.distCwd, configName));
 }
-gulp_1.default.task('doc', function (done) {
+gulp_1.default.task('doc', function () {
     esdoc_1.default.generate(tslib_1.__assign({}, config_1.default.esdoc, esdocConfig));
-    done();
+    return Promise.resolve();
 });

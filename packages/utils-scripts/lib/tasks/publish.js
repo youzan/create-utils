@@ -17,9 +17,10 @@ function publishGit() {
     }));
 }
 function publishDoc() {
-    return gulp_1.default.src(config_1.default.base.distCwd + '/docs/**/*')
+    return gulp_1.default.src(config_1.default.base.distCwd + '/docs/**/*', { dot: true })
         .pipe(gulp_gh_pages_1.default({
-        cacheDir: '.docs',
+        cacheDir: config_1.default.base.docCache,
+        force: true
     }));
 }
 gulp_1.default.task('publish', gulp_1.default.series('clean', 'build', 'typing', 'doc', publishDoc, publishGit));

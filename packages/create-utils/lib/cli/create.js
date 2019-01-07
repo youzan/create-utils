@@ -73,5 +73,6 @@ function default_1(name) {
     console.log();
     console.log(chalk_1.default.cyan('  cd'), name);
     console.log("  " + chalk_1.default.cyan('npm run dev'));
+    process.exit(1);
 }
 exports.default = default_1;

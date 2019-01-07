@@ -11,7 +11,7 @@ if (exists) {
   esdocConfig = require(path.resolve(config.base.distCwd, configName));
 }
 
-gulp.task('doc', (done) => {
+gulp.task('doc', () => {
   ESDoc.generate({ ...config.esdoc, ...esdocConfig });
-  done();
+  return Promise.resolve();
 });

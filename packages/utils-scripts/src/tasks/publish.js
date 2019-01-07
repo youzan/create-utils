@@ -21,9 +21,10 @@ function publishGit() {
 }
 
 function publishDoc() {
-  return gulp.src(config.base.distCwd + '/docs/**/*')
+  return gulp.src(config.base.distCwd + '/docs/**/*', { dot: true })
   .pipe(ghPages({
-    cacheDir: '.docs',
+    cacheDir: config.base.docCache,
+    force: true
   }));
 }
 

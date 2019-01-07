@@ -1,4 +1,4 @@
-import { jsWithTs as tsjPreset } from 'ts-jest/presets';
+import { jsWithTs as tsjPreset, jsWithBabel as babelPreset } from 'ts-jest/presets';
 const jest = require('jest');
 import fs from 'fs-extra';
 import path from 'path';

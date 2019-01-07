@@ -17,7 +17,8 @@ module.exports = {
             // isolatedModules: false,
             // diagnostics: false,
             tsConfig: {
-                // importHelpers: true,
+                esModuleInterop: true,
+                importHelpers: true,
                 allowJs: true
             }
         }
