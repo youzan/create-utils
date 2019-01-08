@@ -13,6 +13,6 @@ export default function() {
 
     console.log();
     const target =  process.env.target === 'cjs' ? 'cjs' : 'es';
-    console.log(`Please checkout to ${chalk.cyan('publish/' + target)} branch, and publish to npm`);
+    console.log(`Please checkout to ${chalk.cyan('publish/' + target)} branch, and publish it`);
   });
 }

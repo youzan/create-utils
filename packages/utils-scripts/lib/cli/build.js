@@ -11,7 +11,7 @@ function default_1() {
         console.log('Build task has been completed');
         console.log();
         var target = process.env.target === 'cjs' ? 'cjs' : 'es';
-        console.log("Please checkout to " + chalk_1.default.cyan('publish/' + target) + " branch, and publish to npm");
+        console.log("Please checkout to " + chalk_1.default.cyan('publish/' + target) + " branch, and publish it");
     });
 }
 exports.default = default_1;
