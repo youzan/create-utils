@@ -16,4 +16,4 @@ function publishGit() {
         push: true,
     }));
 }
-gulp_1.default.task("build", gulp_1.default.series('clean', 'dev:build', 'typing', publishGit));
+gulp_1.default.task("build", gulp_1.default.series('clean', 'dev:build', 'typing', publishGit, 'clean'));

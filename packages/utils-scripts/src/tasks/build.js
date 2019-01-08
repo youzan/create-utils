@@ -22,4 +22,4 @@ function publishGit() {
 }
 
 
-gulp.task("build", gulp.series('clean', 'dev:build', 'typing', publishGit));
+gulp.task("build", gulp.series('clean', 'dev:build', 'typing', publishGit, 'clean'));

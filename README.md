@@ -15,7 +15,7 @@ npx create-utils zan-utils
 cd zan-utils
 npm run dev
 ```
-Typescript is used by default, if you use javascript:
+Typescript is used by default, if you want to use javascript:
 
 ```
 npx create-utils zan-utils --js
