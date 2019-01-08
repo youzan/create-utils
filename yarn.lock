@@ -2820,7 +2820,7 @@ esdoc-accessor-plugin@^1.0.0:
   resolved "http://registry.npm.taobao.org/esdoc-accessor-plugin/download/esdoc-accessor-plugin-1.0.0.tgz#791ba4872e6c403515ce749b1348d6f0293ad9eb"
   integrity sha1-eRukhy5sQDUVznSbE0jW8Ck62es=
 
-esdoc-brand-plugin@^1.0.0, esdoc-brand-plugin@^1.0.1:
+esdoc-brand-plugin@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/esdoc-brand-plugin/download/esdoc-brand-plugin-1.0.1.tgz#7c0e1ae90e84c30b2d3369d3a6449f9dc9f8d511"
   integrity sha1-fA4a6Q6EwwstM2nTpkSfncn41RE=

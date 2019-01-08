@@ -6,7 +6,7 @@
 [![npm version](https://img.shields.io/npm/v/create-utils.svg?style=flat)](https://www.npmjs.com/package/create-utils) [![downloads](https://img.shields.io/npm/dt/create-utils.svg)](https://www.npmjs.com/package/create-utils) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
 # create-utils
-Create javascript function with no build configuration,Create your own JavaScript utility library like [Lodash](https://github.com/lodash/lodash).
+Create javascript function with no build configuration,build your own JavaScript utility library like [Lodash](https://github.com/lodash/lodash).
 
 ## Usage
 
@@ -26,7 +26,7 @@ Create-utils makes create a modern JavaScript utility library easier,
 
 - No configuration
 - Default support typescript, Automatically generate typings
-- Automatically generate documents
+- Automatically generate documents via `ESDoc`
 - Support multiple modular，eg 'ESModule', 'CommonJs'
 - Test by jest
 - Load on demand

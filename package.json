@@ -4,6 +4,10 @@
     "packages/*"
   ],
   "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "release": "lerna publish"
+  },
   "devDependencies": {
     "lerna": "^3.8.1",
     "tslint": "^5.12.0",

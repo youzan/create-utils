@@ -5,7 +5,7 @@ There are two packages here in the packages directory.
 ### Set Up
 ```
 yarn add lerna -g
-lerna bootstrap
+yarn install
 
 cd package/utils-scripts
 npm run dev
@@ -21,5 +21,6 @@ yarn link 'utils-scripts'
 
 ### Publish
 ```
-lerna publish
+npm run build
+npm run publish
 ```
