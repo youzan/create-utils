@@ -8,9 +8,9 @@ var gulp_json_editor_1 = tslib_1.__importDefault(require("gulp-json-editor"));
 var config_1 = tslib_1.__importDefault(require("../config"));
 function publishGit() {
     return merge2_1.default(gulp_1.default.src('package.json').pipe(gulp_json_editor_1.default(function (json) {
-        var name = { name: "" + json.name + (config_1.default.target.prefix ? ('-' + config_1.default.target.prefix) : '') };
-        return Object.assign.apply(Object, [{}, json, config_1.default.target.packageRewrite].concat(name));
-    })), gulp_1.default.src([config_1.default.base.dist + '/**'].concat(config_1.default.base.static))).pipe(gulp_gh_pages_1.default({
+        var name = { name: "" + json.name + (config_1.default.target.prefix ? config_1.default.target.prefix : '') };
+        return Object.assign({}, json, { types: './index.d.ts' }, name);
+    })), gulp_1.default.src([config_1.default.base.dist + '/**'].concat(config_1.default.base.static, [config_1.default.base.types + '/**']))).pipe(gulp_gh_pages_1.default({
         branch: config_1.default.target.branch,
         cacheDir: config_1.default.base.publishCache,
         push: true,

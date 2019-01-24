@@ -1,9 +1,7 @@
 import gulp from 'gulp';
 import connect from 'gulp-connect';
 import { createProject } from "gulp-typescript";
-import babel from "gulp-babel";
 import gulpIf from "gulp-if";
-import newer from "gulp-newer";
 import path from "path";
 
 import config from '../config';
@@ -22,37 +20,24 @@ function livereload() {
 function watch() {
   gulp.watch(config.base.template, gulp.series('doc'));
   gulp.watch(config.base.config,  gulp.series('doc'));
-  return gulp.watch(config.base.src, gulp.series('build', 'doc'));
+  return gulp.watch(config.base.src, gulp.series('dev:build', 'doc'));
 }
 
 function build() {
-  if (config.base.useTypeScript) {
-    const tsProject = createProject({
-      ...config.target.tsconfig,
-    });
-    const tsResult = gulp
-      .src('src/**/**/*',  { base: path.join(config.base.distCwd, "src") })
-      .pipe(
-        gulpIf(
-          !config.env.prod,
-          newer({
-            dest: config.base.dist,
-            ext: ".js"
-          })
-        )
-      )
-      .pipe(tsProject());
-    return tsResult.js
-      .pipe(gulp.dest(config.base.esTemp))
-      .pipe(gulpIf(config.target.babel, babel(config.target.babel)))
-      .pipe(gulp.dest(config.base.dist));
-  } else {
-    return gulp
-      .src('src/**/**/*',  { base: path.join(config.base.distCwd, "src") })
-      .pipe(gulp.dest(config.base.esTemp))
-      .pipe(babel(config.target.babel))
-      .pipe(gulp.dest(config.base.dist));
-  }
+  const tsProject = createProject({
+    ...config.target.tsconfig, module: 'ESNext', declaration: null
+  });
+  const tsProjectWithJs = createProject({
+    ...config.target.tsconfig, allowJs: true, declaration: null
+  });
+
+  return gulp
+    .src('src/**/**/*',  { base: path.join(config.base.distCwd, "src") })
+    .pipe(gulpIf(config.base.useTypeScript, tsProject()))
+    .pipe(gulp.dest(config.base.esTemp))
+    .pipe(tsProjectWithJs())
+    .pipe(gulp.dest(config.base.dist));
+
 }
 gulp.task('dev:build', gulp.series(build));
 gulp.task('dev', gulp.series(build, 'doc', gulp.parallel(server, watch, livereload)));

@@ -17,4 +17,5 @@ module.exports = {
   publishCache: path.join(distCwd, '.publish'),
   docCache: path.join(distCwd, '.docs'),
   static: ['README.md'],
+  types: path.join(distCwd, 'types')
 };

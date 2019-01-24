@@ -8,10 +8,10 @@ import config from "../config";
 function publishGit() {
   return merge(
     gulp.src('package.json').pipe(jsonEditor((json) => {
-      const name = { name: `${json.name}${config.target.prefix ? ('-' + config.target.prefix) : ''}`}
-      return Object.assign({}, json, config.target.packageRewrite, ...name);
+      const name = { name: `${json.name}${config.target.prefix ? config.target.prefix : ''}`}
+      return Object.assign({}, json, { types: './index.d.ts' }, name);
     })),
-    gulp.src([config.base.dist + '/**', ...config.base.static]),
+    gulp.src([config.base.dist + '/**', ...config.base.static, config.base.types + '/**']),
   ).pipe(
     ghPages({
       branch: config.target.branch,
