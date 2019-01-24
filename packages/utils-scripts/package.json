@@ -1,6 +1,6 @@
 {
   "name": "utils-scripts",
-  "version": "0.0.7",
+  "version": "0.0.8-alpha.0",
   "description": "Configuration and scripts for Create Utils",
   "keywords": [
     "utils",
@@ -51,7 +51,7 @@
     "gulp": "^4.0.0",
     "gulp-connect": "^5.7.0",
     "gulp-gh-pages": "0.5.4",
-    "gulp-if" :"^2.0.2",
+    "gulp-if": "^2.0.2",
     "gulp-json-editor": "^2.5.0",
     "gulp-typescript": "^5.0.0",
     "jest": "^23.6.0",
