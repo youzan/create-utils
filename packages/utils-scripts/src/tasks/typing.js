@@ -14,7 +14,7 @@ gulp.task('typing', () => {
     const tsResult = gulp
       .src('src/**/**/*',  { base: path.join(config.base.distCwd, "src") })
       .pipe(tsProject());
-    return tsResult.dts.pipe(gulp.dest(config.base.types));
+    return tsResult.dts.pipe(gulp.dest(config.base.dist));
   } else {
     return Promise.resolve();
   }

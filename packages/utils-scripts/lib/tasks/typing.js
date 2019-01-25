@@ -12,7 +12,7 @@ gulp_1.default.task('typing', function () {
         var tsResult = gulp_1.default
             .src('src/**/**/*', { base: path_1.default.join(config_1.default.base.distCwd, "src") })
             .pipe(tsProject());
-        return tsResult.dts.pipe(gulp_1.default.dest(config_1.default.base.types));
+        return tsResult.dts.pipe(gulp_1.default.dest(config_1.default.base.dist));
     }
     else {
         return Promise.resolve();

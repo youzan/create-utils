@@ -11,7 +11,7 @@ function publishGit() {
       const name = { name: `${json.name}${config.target.prefix ? config.target.prefix : ''}`}
       return Object.assign({}, json, { types: './index.d.ts' }, name);
     })),
-    gulp.src([config.base.dist + '/**', ...config.base.static, config.base.types + '/**']),
+    gulp.src([config.base.dist + '/**', ...config.base.static, config.base.types + '/**'], { dot: true }),
   ).pipe(
     ghPages({
       branch: config.target.branch,

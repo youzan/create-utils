@@ -15,6 +15,6 @@ module.exports = {
     dist: path.join(distCwd, 'dist'),
     publishCache: path.join(distCwd, '.publish'),
     docCache: path.join(distCwd, '.docs'),
-    static: ['README.md'],
-    types: path.join(distCwd, 'types')
+    static: ['README.md', '.gitignore'],
+    types: path.join(distCwd, 'typings')
 };
