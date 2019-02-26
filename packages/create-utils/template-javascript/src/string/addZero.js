@@ -9,6 +9,7 @@
  * // '11'
  */
 function addZero(num) {
-    return (num >= 0 && num < 10) ? `0${num}` : String(num);
+  return (num >= 0 && num < 10) ? `0${num}` : String(num);
 }
-export default addZero;
+
+module.exports = addZero;

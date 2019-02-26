@@ -40,4 +40,4 @@ function tozhCN(num: string | number): string {
     .replace(/(元|角)$/g, '$1整');
 }
 
-export default tozhCN;
+export = tozhCN;

@@ -1,7 +1,2 @@
-import money from './money';
-import string from './string';
-
-export default {
-  money,
-  string,
-};
+export * from './money';
+export * from './string';
