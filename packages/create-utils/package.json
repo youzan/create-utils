@@ -44,5 +44,5 @@
     "@types/node": "^10.12.18",
     "typescript": "^3.2.2"
   },
-  "gitHead": "9609ce2632aa5f8e08e325b7a5bdb9afea76a683"
+  "gitHead": "68e59d2a3f165efbbb9d6172105c075850b3c4e6"
 }
