@@ -17,7 +17,7 @@ export default async function() {
     config = require(path.resolve(base.distCwd, configName));
   }
   const argConfig = { ...jestConfig, ...config, rootDir: base.distCwd, ...tsjPreset };
-
+  console.log(argv);
   argv.push(
     '--config',
     JSON.stringify(argConfig)

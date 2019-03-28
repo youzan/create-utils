@@ -66,7 +66,7 @@ export default function(name: string): void{
   const args = ['add', '--exact'];
   args.push(packageToInstall);
   if (!this.js) {
-    args.push('@types/node', '@types/jest', 'typescript');
+    args.push('@types/node', '@types/jest', 'typescript', 'tslib');
   }
   args.push('-D');
   args.push('--cwd');

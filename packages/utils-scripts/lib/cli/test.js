@@ -23,6 +23,7 @@ function default_1() {
                         config = require(path_1.default.resolve(base_1.default.distCwd, configName));
                     }
                     argConfig = tslib_1.__assign({}, jest_config_1.default, config, { rootDir: base_1.default.distCwd }, presets_1.jsWithTs);
+                    console.log(argv);
                     argv.push('--config', JSON.stringify(argConfig));
                     jest.run(argv);
                     return [2 /*return*/];
