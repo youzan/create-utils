@@ -56,6 +56,9 @@
     "gulp-typescript": "^5.0.0",
     "jest": "^23.6.0",
     "merge2": "^1.2.3",
+    "rollup": "^1.10.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
     "ts-jest": "^23.10.5",
     "tslib": "^1.9.3",
     "typescript": "^3.2.2"

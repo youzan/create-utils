@@ -39,6 +39,14 @@ export default function(name: string): void{
   const packageJson = {
     name,
     version: '0.0.1',
+    main: "dist/cjs.js",
+    module: "dist/esm.js",
+    unpkg: "dist/umd.js",
+    types: "typings/index.d.ts",
+    files: [
+      "dist",
+      "typings"
+    ],
     scripts: {
       dev: "utils-scripts dev",
       build: "utils-scripts build",

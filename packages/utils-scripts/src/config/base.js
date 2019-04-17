@@ -7,6 +7,7 @@ appPackage.devDependencies = appPackage.devDependencies || {};
 module.exports = {
   useTypeScript: appPackage.devDependencies['typescript'] != null,
   distCwd,
+  appPackage,
   pkg: 'package.json',
   curCwd: path.resolve(__dirname, '../../'),
   src: path.join(distCwd, 'src'),
