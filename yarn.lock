@@ -2696,6 +2696,11 @@ esdoc-lint-plugin@^1.0.0:
   resolved "http://registry.npm.taobao.org/esdoc-lint-plugin/download/esdoc-lint-plugin-1.0.2.tgz#4962930c6dc5b25d80cf6eff1b0f3c24609077f7"
   integrity sha1-SWKTDG3Fsl2Az27/Gw88JGCQd/c=
 
+esdoc-node@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/esdoc-node/download/esdoc-node-1.0.4.tgz#97fec78a9bbed26f15349c03c9b9e2f8a6baafe5"
+  integrity sha1-l/7Hipu+0m8VNJwDybni+Ka6r+U=
+
 esdoc-publish-html-plugin@^1.0.0, esdoc-publish-html-plugin@^1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/esdoc-publish-html-plugin/download/esdoc-publish-html-plugin-1.1.2.tgz#bdece7bc7a0a3e419933503252db7a6772879dab"

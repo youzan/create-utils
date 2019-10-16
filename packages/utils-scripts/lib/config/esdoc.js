@@ -19,6 +19,9 @@ module.exports = {
             },
         },
         {
+            name: 'esdoc-node',
+        },
+        {
             name: 'esdoc-publish-html-plugin',
             option: {
                 template: base.template,
