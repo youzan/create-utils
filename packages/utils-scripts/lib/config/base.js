@@ -11,7 +11,7 @@ module.exports = {
     src: path.join(distCwd, 'src'),
     config: path.join(__dirname, '../config'),
     template: path.join(__dirname, '../../docs-template'),
-    esTemp: path.join(distCwd, '.temp'),
+    esTemp: path.join(distCwd, 'temp'),
     dist: path.join(distCwd, 'dist'),
     publishCache: path.join(distCwd, '.publish'),
     docCache: path.join(distCwd, '.docs'),
