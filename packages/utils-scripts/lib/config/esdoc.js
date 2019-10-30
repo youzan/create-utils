@@ -15,7 +15,7 @@ module.exports = {
         {
             name: 'esdoc-importpath-plugin',
             option: {
-                replaces: [{ from: '.temp/', to: '' }],
+                replaces: [{ from: 'temp/', to: '' }],
             },
         },
         {
