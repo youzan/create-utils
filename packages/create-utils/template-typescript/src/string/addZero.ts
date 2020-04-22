@@ -11,4 +11,4 @@
 function addZero(num: number) {
   return (num >= 0 && num < 10) ? `0${num}` : String(num);
 }
-export default addZero;
+export = addZero;

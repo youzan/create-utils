@@ -1,5 +1,5 @@
 import tozhCN from './tozhCN';
 
-export default {
+export {
   tozhCN,
 };

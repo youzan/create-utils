@@ -1,5 +1,5 @@
 import addZero from './addZero';
 
-export default {
+export {
   addZero,
 }
